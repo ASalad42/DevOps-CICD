@@ -6,6 +6,11 @@ Create DevOps CI/CD pipelines using Git, Jenkins, Ansible, Docker and Kubernetes
 
 ![image](https://user-images.githubusercontent.com/104793540/194310307-efd8ff91-56c3-4c75-8226-f6eb71407a20.png)
 
+![image](https://user-images.githubusercontent.com/104793540/194337354-72e003b0-5d73-4621-b2d1-a701718dc6ed.png)
+
+
+![image](https://user-images.githubusercontent.com/104793540/194337681-35f4c182-8aef-4f04-bfa7-9baf2010c0bf.png)
+
 Deploy to:
 - VM 
 - Docker container 
@@ -16,12 +21,41 @@ Deploy to:
 ![image](https://user-images.githubusercontent.com/104793540/194319019-9de43938-0d6a-4ced-89fa-6c5e7ba7c763.png)
 
 #### Setting up CI/CD pipline with Github, Jenkins, Maven and Tomcat
-- setup jenkins 
-- setup & configure Maven and Git 
-- setup Tomcat Server 
-- Integrating GitHub, Maven, Tomcat with Jenkins 
-- create a CI and CD job 
-- Test the deployment 
+setup jenkins 
+- launch ec2 with custom tcp rule for port 8080 from anywhere 
+- ssh into ec2 and `sudo su -` to be root user 
+- install java 
+- install jenkins from https://www.jenkins.io/download/ and download stable version LTS
+- Jenkins Redhat Packages 
+- `sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo`
+- `sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key`
+- `yum install fontconfig java-11-openjdk`
+- `sudo amazon-linux-extras install java-openjdk11`
+- `yum install jenkins`
+- `service jenkins status`
+- `service jenkins start`
+- publicip:8080
+- in ec2: cat location to get password > copy and paste into browser > start using jenkins (sign with admin and password)
+
+![image](https://user-images.githubusercontent.com/104793540/194350154-74031d57-2552-46b8-b01c-feca4c0d7055.png)
+
+- New item, configure, build now, console output 
+
+integrate Github with jenkins 
+
+- install git on jenkins instance 
+- install github plugin on jenkins GUI 
+- configure Git on Jenkins GUI
+
+setup & configure Maven and Git 
+
+setup Tomcat Server 
+
+Integrating GitHub, Maven, Tomcat with Jenkins 
+
+create a CI and CD job 
+
+Test the deployment 
 
 ### Deploy Artifacts on a Docker Container 
 
