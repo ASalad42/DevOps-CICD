@@ -48,6 +48,8 @@ Deploy to:
 
 ### Deploy Artifacts on Kubernetes  
 
+![image](https://user-images.githubusercontent.com/104793540/194322662-e11d6a42-6863-48c0-a89e-130e0657b9e8.png)
+
 #### CI/CD pipline with Github, Jenkins, Maven, Ansible and Kubernetes 
 - **setup Kubertnetes (EKS) on aws**
 - write pod, service, and deployment manifest files
