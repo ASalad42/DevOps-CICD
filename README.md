@@ -36,6 +36,7 @@ Deploy to:
 - `service jenkins start`
 - publicip:8080
 - in ec2: cat location to get password > copy and paste into browser > start using jenkins (sign with admin and password)
+- `cat /var/lib/jenkins/secrets/initialAdminPassword`
 
 ![image](https://user-images.githubusercontent.com/104793540/194350154-74031d57-2552-46b8-b01c-feca4c0d7055.png)
 
@@ -53,11 +54,28 @@ Deploy to:
 https://maven.apache.org/install 
 
 - setup Maven on Jenkins server
-- setup environment variable (JAVA_HOME, M2, M2_HOME)
-- install maven plugin 
-- configure Maven and Java 
 
+https://maven.apache.org/install
+https://maven.apache.org/download.cgi
 
+- `wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz`
+- `tar -xvzf apache-maven-3.8.6-bin.tar.gz`
+- `mv apache-maven-3.8.6 maven`
+- maven > bin > `./mvn -v ` - must be done in that location 
+- setup environment variable (JAVA_HOME, M2, M2_HOME): `cd ~` `vi .bash_profile`
+
+![image](https://user-images.githubusercontent.com/104793540/194382832-7b19e841-3af0-4f4e-a400-390c9dbe6c17.png)
+![image](https://user-images.githubusercontent.com/104793540/194382901-ea05757d-7b1e-4810-a85c-11d7b6a0e213.png)
+
+- `wq!` > `source .bash_profile` > `mvn -v` (check to see if Maven 3.8.3 and Java 11 installed) 
+- install maven plugin > under plugin manager > maven integration 
+- configure Maven and Java > under global tool config
+
+![image](https://user-images.githubusercontent.com/104793540/194387154-5b897a90-1747-4fb2-b720-c2ffe690a8ea.png)
+![image](https://user-images.githubusercontent.com/104793540/194387190-25bc2389-1ac8-4159-8360-1198a7a18b19.png)
+- new item > maven project > git:http link > goals: clean install > run now > check console 
+- `cd /var/lib/jenkins/` > `ll` > `cd workspace`
+- generated artficat using Maven: webapp.war is the artificat inside target folder 
 
 ##### setup Tomcat Server 
 
