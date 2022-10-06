@@ -21,7 +21,7 @@ Deploy to:
 ![image](https://user-images.githubusercontent.com/104793540/194319019-9de43938-0d6a-4ced-89fa-6c5e7ba7c763.png)
 
 #### Setting up CI/CD pipline with Github, Jenkins, Maven and Tomcat
-setup jenkins 
+##### setup jenkins 
 - launch ec2 with custom tcp rule for port 8080 from anywhere 
 - ssh into ec2 and `sudo su -` to be root user 
 - install java 
@@ -41,21 +41,31 @@ setup jenkins
 
 - New item, configure, build now, console output 
 
-integrate Github with jenkins 
+##### integrate Github with jenkins 
 
-- install git on jenkins instance 
+- install git on jenkins instance `yum install git` check with `git --version`
 - install github plugin on jenkins GUI 
-- configure Git on Jenkins GUI
+- configure Git on Jenkins GUI under Global Tool Config
+- pullcodefromgithub job > check workspace console or jenkins ec2 server (`cd /var/lib/jenkins/workspace/pullcodefromgithub` > `ls`)
 
-setup & configure Maven and Git 
+##### setup & configure Maven and Git  
 
-setup Tomcat Server 
+https://maven.apache.org/install 
 
-Integrating GitHub, Maven, Tomcat with Jenkins 
+- setup Maven on Jenkins server
+- setup environment variable (JAVA_HOME, M2, M2_HOME)
+- install maven plugin 
+- configure Maven and Java 
 
-create a CI and CD job 
 
-Test the deployment 
+
+##### setup Tomcat Server 
+
+##### Integrating GitHub, Maven, Tomcat with Jenkins 
+
+##### create a CI and CD job 
+
+##### Test the deployment 
 
 ### Deploy Artifacts on a Docker Container 
 
