@@ -78,6 +78,20 @@ https://maven.apache.org/download.cgi
 - generated artficat using Maven: webapp.war is the artificat inside target folder 
 
 ##### setup Tomcat Server 
+https://github.com/ASalad42/Simple-DevOps-Project/blob/master/Tomcat/tomcat_installation.MD
+https://tomcat.apache.org/download-10.cgi
+- setup a linux ec2 instance > `sudo su -`
+- install java `amazon-linux-extras install java-openjdk11`
+
+configure Tomcat:
+- `cd /opt`
+- `wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.26/bin/apache-tomcat-10.0.26.tar.gz`
+- `tar -xvzf apache-tomcat-10.0.26.tar.gz`
+- `mv apache-tomcat-10.0.26 tomcat`
+- Start Tomcat Server 
+- Access web UI on port 8080 
+
+
 
 ##### Integrating GitHub, Maven, Tomcat with Jenkins 
 
