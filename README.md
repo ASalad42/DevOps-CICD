@@ -51,6 +51,12 @@ Deploy to:
 
 ##### setup & configure Maven and Git  
 
+ Tool that can now be used for building and managing any Java-based project. Benefits include:
+- Making the build process easy
+- Providing a uniform build system
+- Providing quality project information
+- Encouraging better development practices
+
 https://maven.apache.org/install 
 
 - setup Maven on Jenkins server
@@ -78,7 +84,10 @@ https://maven.apache.org/download.cgi
 - generated artficat using Maven: webapp.war is the artificat inside target folder 
 
 ##### setup Tomcat Server 
+Apache Tomcat, also known as Tomcat Server, proves to be a popular choice for web developers building and maintaining dynamic websites and applications based on the Java software platform. 
+
 https://github.com/ASalad42/Simple-DevOps-Project/blob/master/Tomcat/tomcat_installation.MD
+
 https://tomcat.apache.org/download-10.cgi
 - setup a linux ec2 instance > `sudo su -`
 - install java `amazon-linux-extras install java-openjdk11`
