@@ -88,12 +88,30 @@ configure Tomcat:
 - `wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.26/bin/apache-tomcat-10.0.26.tar.gz`
 - `tar -xvzf apache-tomcat-10.0.26.tar.gz`
 - `mv apache-tomcat-10.0.26 tomcat`
+- in bin directory `./startup.sh` > then use public ip:8080 to see server 
 - Start Tomcat Server 
-- Access web UI on port 8080 
+
+![image](https://user-images.githubusercontent.com/104793540/194566293-1ad1585d-d83d-41cf-b694-1e42d1296ab3.png)
 
 
+Access web UI on port 8080:
+- getting access to manager app on web browser
+- `find / -name context.xml` in tomcat dir
+- `vi /opt/tomcat/webapps/host-manager/META-INF/context.xml`
+- `vi /opt/tomcat/webapps/manager/META-INF/context.xml`
+- `./shutdown.sh ` in bin
+- `./startup.sh`
+- commenting out example at top in context.xml file 
+- go to conf dir and `vi tomcat-users.xml`
+- `ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup`
+- `ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown`
+- can now use tomcatup and tomcatdown 
 
 ##### Integrating GitHub, Maven, Tomcat with Jenkins 
+For tomcat install "Deploy to Container"
+- go back to jenkins server
+configure tomcat server with credentials 
+
 
 ##### create a CI and CD job 
 
