@@ -4,7 +4,7 @@
 
 Create DevOps CI/CD pipelines using Git, Jenkins, Ansible, Docker and Kubernetes on AWS
 
-![image](https://user-images.githubusercontent.com/104793540/194310307-efd8ff91-56c3-4c75-8226-f6eb71407a20.png)
+![image](https://user-images.githubusercontent.com/104793540/194765673-d9251e6c-3812-4b70-85fb-0c5f325d6175.png)
 
 ![image](https://user-images.githubusercontent.com/104793540/194337354-72e003b0-5d73-4621-b2d1-a701718dc6ed.png)
 
