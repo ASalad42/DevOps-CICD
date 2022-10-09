@@ -18,7 +18,7 @@ Deploy to:
 
 ### Deploy Artifacts on Tomcat Server 
 
-![image](https://user-images.githubusercontent.com/104793540/194319019-9de43938-0d6a-4ced-89fa-6c5e7ba7c763.png)
+![image](https://user-images.githubusercontent.com/104793540/194764180-92c29e84-def8-4cbe-a03a-b25d9e3c1fb3.png)
 
 #### Setting up CI/CD pipline with Github, Jenkins, Maven and Tomcat
 ##### setup jenkins 
@@ -128,7 +128,7 @@ configure tomcat server with credentials
 
 ### Deploy Artifacts on a Docker Container 
 
-![image](https://user-images.githubusercontent.com/104793540/194319652-b6bbaa43-c4b6-43f1-9e37-4cfafadd6e00.png)
+![image](https://user-images.githubusercontent.com/104793540/194764324-4b8d310c-81d6-4ae6-addb-b42d33086e4a.png)
 
 #### Setting up CI/CD pipline with Github, Jenkins, Maven and Docker
 - setting up docker environment 
@@ -139,7 +139,7 @@ configure tomcat server with credentials
 
 ### Deploy Artifacts on a Docker Container with help of Ansible 
 
-![image](https://user-images.githubusercontent.com/104793540/194320867-21e66ab0-d606-4b98-9640-8f6c7b3926f2.png)
+![image](https://user-images.githubusercontent.com/104793540/194764817-58f9dcb2-154b-44b8-bffc-f61e0483bddf.png)
 
 #### CI/CD pipline with Github, Jenkins, Maven,Ansible and Docker
 - setup Ansible server
@@ -151,7 +151,7 @@ configure tomcat server with credentials
 
 ### Deploy Artifacts on Kubernetes  
 
-![image](https://user-images.githubusercontent.com/104793540/194322662-e11d6a42-6863-48c0-a89e-130e0657b9e8.png)
+![image](https://user-images.githubusercontent.com/104793540/194764912-1bf74280-a68b-4ed2-9ec9-cec35adcbc02.png)
 
 #### CI/CD pipline with Github, Jenkins, Maven, Ansible and Kubernetes 
 - **setup Kubertnetes (EKS) on aws**
