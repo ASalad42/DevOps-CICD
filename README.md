@@ -143,13 +143,21 @@ using build triggers
 ![image](https://user-images.githubusercontent.com/104793540/194764324-4b8d310c-81d6-4ae6-addb-b42d33086e4a.png)
 
 #### Setting up CI/CD pipline with Github, Jenkins, Maven and Docker
-setting up docker environment 
+setting up docker environment (ensure sg for external port in docker is open)
 - `yum install docker -y` `docker --version`
 - `service docker start`  `service docker status`  `docker images`  `doccker ps`  `docker ps -a`
 
 ##### How Docker Works
 ![image](https://user-images.githubusercontent.com/104793540/195129991-08da5e69-32fe-409f-b99a-850da445467e.png)
 
+tomcat container on dockerhub 
+
+![image](https://user-images.githubusercontent.com/104793540/195131089-63c6a065-a9f1-4f81-8283-ba5ae9cc4dc5.png)
+
+- dockerpull tomcat on ec2 server 
+- docker images to check 
+- docker run -d (detached) --name (name i want) tomcat-container -p 8081 (external network):8080 (exposed port to internal network) tomcat
+- docker ps -a 
 
 write Dockerfile 
 
