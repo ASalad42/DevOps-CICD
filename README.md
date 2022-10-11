@@ -124,26 +124,37 @@ For tomcat install "Deploy to Container"
 - manage credentials > deployer creds
 - new job > clean install > post build action: deploy war/ear to a container > `/var/lib/jenkins/workspace/MavenProject/webapp/target`
 - `webapp/target/webapp.war` or easier is **/*.war 
-- tomcat 8 container > http://ip:8080 of our tomcat
+- tomcat 8 container > http://ip:8080 of our tomcat > apply and build
 
+##### Deploy Artifacts on Tomcat server 
+- change code locally , push to github, build new job > changes seen on server - MANUAL
 
-configure tomcat server with credentials 
+##### Automated build and deploy  
+using build triggers
+- build periodically > build even if no change at decided condition 
+- github hook trigger
+- Poll SCM - build only if changes detected > **used this one** > job started  by SCM change > check tomcat server 
 
+![image](https://user-images.githubusercontent.com/104793540/195090883-ca10a8c8-da9d-45ba-bc75-54bb48b0a7c5.png)
 
-##### create a CI and CD job 
-
-##### Test the deployment 
 
 ### Deploy Artifacts on a Docker Container 
 
 ![image](https://user-images.githubusercontent.com/104793540/194764324-4b8d310c-81d6-4ae6-addb-b42d33086e4a.png)
 
 #### Setting up CI/CD pipline with Github, Jenkins, Maven and Docker
-- setting up docker environment 
-- write Dockerfile 
-- create an image and container on docker host 
-- integrate docker host with jenkins 
-- create CI/CD job on jenkins to build and deploy container 
+setting up docker environment 
+- `yum install docker -y` `docker --version`
+- `service docker start`  `service docker status`  `docker images`  `doccker ps`  `docker ps -a`
+- 
+
+write Dockerfile 
+
+create an image and container on docker host 
+
+integrate docker host with jenkins 
+
+create CI/CD job on jenkins to build and deploy container 
 
 ### Deploy Artifacts on a Docker Container with help of Ansible 
 
