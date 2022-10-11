@@ -146,7 +146,10 @@ using build triggers
 setting up docker environment 
 - `yum install docker -y` `docker --version`
 - `service docker start`  `service docker status`  `docker images`  `doccker ps`  `docker ps -a`
-- 
+
+##### How Docker Works
+![image](https://user-images.githubusercontent.com/104793540/195129991-08da5e69-32fe-409f-b99a-850da445467e.png)
+
 
 write Dockerfile 
 
