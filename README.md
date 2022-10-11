@@ -37,6 +37,7 @@ Deploy to:
 - publicip:8080
 - in ec2: cat location to get password > copy and paste into browser > start using jenkins (sign with admin and password)
 - `cat /var/lib/jenkins/secrets/initialAdminPassword`
+- profile > configure > change password 
 
 ![image](https://user-images.githubusercontent.com/104793540/194350154-74031d57-2552-46b8-b01c-feca4c0d7055.png)
 
@@ -119,6 +120,13 @@ Access web UI on port 8080:
 ##### Integrating GitHub, Maven, Tomcat with Jenkins 
 For tomcat install "Deploy to Container"
 - go back to jenkins server
+- plugin manager > deploy to container 
+- manage credentials > deployer creds
+- new job > clean install > post build action: deploy war/ear to a container > `/var/lib/jenkins/workspace/MavenProject/webapp/target`
+- `webapp/target/webapp.war` or easier is **/*.war 
+- tomcat 8 container > http://ip:8080 of our tomcat
+
+
 configure tomcat server with credentials 
 
 
