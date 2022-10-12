@@ -158,14 +158,35 @@ tomcat container on dockerhub
 - docker images to check 
 - docker run -d (detached) --name (name i want) tomcat-container -p 8081 (external network):8080 (exposed port to internal network) tomcat
 - docker ps -a 
+- docker rm id 
+- login to container via `docker exec -it 67d8d46c82ba /bin/bash`
 
 write Dockerfile 
 
 ```
+FROM
+to pull base image 
 
+RUN
+to execute commands 
 
+CMD
+to provide defaults for an executing container 
 
+EXPOSE
+informs docker that the container listens on the speficied network ports at runtime 
 
+ENTRYPOINT
+to configure a container that will run as an executable
+
+WORKDIR
+sets the working diretory 
+
+COPY
+copy a directory from your local machine to docker container 
+
+ADD
+copy files and folders from you local machine to docker containers 
 
 ```
 
