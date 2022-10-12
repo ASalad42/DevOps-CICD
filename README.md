@@ -161,6 +161,14 @@ tomcat container on dockerhub
 
 write Dockerfile 
 
+```
+
+
+
+
+
+```
+
 create an image and container on docker host 
 
 integrate docker host with jenkins 
