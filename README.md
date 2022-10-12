@@ -161,7 +161,9 @@ tomcat container on dockerhub
 - docker rm id 
 - login to container via `docker exec -it 67d8d46c82ba /bin/bash`
 
-write Dockerfile 
+write Dockerfile & create an image and container on docker host 
+
+https://docs.docker.com/engine/reference/builder/
 
 ```
 FROM
@@ -188,11 +190,19 @@ copy a directory from your local machine to docker container
 ADD
 copy files and folders from you local machine to docker containers 
 
+ENV 
+to set environmental variables 
 ```
 
-create an image and container on docker host 
+- `docker build -t dirofdockerfile`
+
 
 integrate docker host with jenkins 
+
+- create dockeradmin user `cat /etc/passwd`  `cat /etc/group`  `useradd dockeradmin`  `passwd dockeradmin`  `usermod -aG docker dockeradmin`
+- install SCP Publisher Plugin
+- add Dockerhost to jenkins "configure systems"
+
 
 create CI/CD job on jenkins to build and deploy container 
 
