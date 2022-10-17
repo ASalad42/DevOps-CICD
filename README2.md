@@ -13,7 +13,7 @@ You can follow same procedure in the official  AWS document [Getting started wit
    d. Test that your kubectl installation was successful    
 
    ```sh 
-   curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
+   curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.23.7/2022-06-29/bin/darwin/amd64/kubectl
    chmod +x ./kubectl
    mv ./kubectl /usr/local/bin 
    kubectl version --short --client
@@ -49,7 +49,7 @@ You can follow same procedure in the official  AWS document [Getting started wit
    example:
    eksctl create cluster --name ayanle-cluster \
       --region eu-west-1 \
-   --node-type t2.small \
+   --node-type t2.micro \
     ```
 
 5. To delete the EKS clsuter 
