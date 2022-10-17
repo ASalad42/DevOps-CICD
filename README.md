@@ -200,11 +200,14 @@ to set environmental variables
 integrate docker host with jenkins 
 
 - create dockeradmin user `cat /etc/passwd`  `cat /etc/group`  `useradd dockeradmin`  `passwd dockeradmin`  `usermod -aG docker dockeradmin`
-- install SCP Publisher Plugin
+- install SCP Publisher Plugin (host, use private ip)
 - add Dockerhost to jenkins "configure systems"
 
 
 create CI/CD job on jenkins to build and deploy container 
+- copy from buildanddeployjob
+- send artifacts over ssh/scp
+- home (webapp/target) - remote 
 
 ### Deploy Artifacts on a Docker Container with help of Ansible 
 
@@ -223,6 +226,9 @@ create CI/CD job on jenkins to build and deploy container
 ![image](https://user-images.githubusercontent.com/104793540/194764912-1bf74280-a68b-4ed2-9ec9-cec35adcbc02.png)
 
 #### CI/CD pipline with Github, Jenkins, Maven, Ansible and Kubernetes 
+
+https://kubernetes.io/docs/setup/production-environment/
+https://kubernetes.io/docs/setup/production-environment/tools/
 - **setup Kubertnetes (EKS) on aws**
 - write pod, service, and deployment manifest files
 - integrate Kubernetes with Ansible 
