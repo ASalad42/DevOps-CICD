@@ -229,7 +229,10 @@ create CI/CD job on jenkins to build and deploy container
 
 https://kubernetes.io/docs/setup/production-environment/
 https://kubernetes.io/docs/setup/production-environment/tools/
-- **setup Kubertnetes (EKS) on aws**
+
+**setup Kubertnetes (EKS) on aws**
+- 
+
 - write pod, service, and deployment manifest files
 - integrate Kubernetes with Ansible 
 - Ansible playbooks to create deployment and service 
