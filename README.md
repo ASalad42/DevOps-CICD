@@ -231,7 +231,7 @@ https://kubernetes.io/docs/setup/production-environment/
 https://kubernetes.io/docs/setup/production-environment/tools/
 
 **setup Kubertnetes (EKS) on aws**
-- 
+- refer tor README2.md
 
 - write pod, service, and deployment manifest files
 - integrate Kubernetes with Ansible 
