@@ -245,12 +245,17 @@ Both the control plane and individual worker nodes have three main components ea
 **setup Kubertnetes (EKS) on aws**
 - refer tor README2.md
 
+check ec2 IAM role permissions 
+
 ```
 eksctl create cluster --name ayanle-cluster \
 --region us-east-1 \
 --node-type t2.small \
 ```
 - `kubectl run webapp --image=httpd`  (for commands refer to https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- `kubectl get nodes`  `kubectl get all`   `kubectl get pod`  `eksctl delete cluster ayanle --region us-east-1`
+- `kubectl create deployment  demo-nginx --image=nginx --replicas=2 --port=80`
+- `kubectl expose deployment demo-nginx --port=80 --type=LoadBalancer`  `kubectl get services -o wide`
 
 
 write pod, service, and deployment manifest files
