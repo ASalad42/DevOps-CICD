@@ -237,9 +237,9 @@ https://kubernetes.io/docs/setup/production-environment/tools/
 - refer tor README2.md
 
 ```
-eksctl create cluster --name ayanle \
+eksctl create cluster --name ayanle-cluster \
 --region us-east-1 \
---node-type t2.small 
+--node-type t2.small \
 ```
 
 - write pod, service, and deployment manifest files
