@@ -230,8 +230,17 @@ create CI/CD job on jenkins to build and deploy container
 https://kubernetes.io/docs/setup/production-environment/
 https://kubernetes.io/docs/setup/production-environment/tools/
 
+##### How K8 works
+
+
 **setup Kubertnetes (EKS) on aws**
 - refer tor README2.md
+
+```
+eksctl create cluster --name ayanle \
+--region us-east-1 \
+--node-type t2.small 
+```
 
 - write pod, service, and deployment manifest files
 - integrate Kubernetes with Ansible 
