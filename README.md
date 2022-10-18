@@ -231,7 +231,16 @@ https://kubernetes.io/docs/setup/production-environment/
 https://kubernetes.io/docs/setup/production-environment/tools/
 
 ##### How K8 works
+Many DevOps tools participate in the workflow of CI/CD pipelines. Kubernetes is often employed as the container orchestrator of choice, together with the Jenkins automation server, Docker, and other tools. Kubernetes keeps track of your container applications that are deployed into the cloud. It restarts orphaned containers, shuts down containers when they’re not being used, and automatically provisions resources like memory, storage, and CPU when necessary.
 
+![image](https://user-images.githubusercontent.com/104793540/196531543-c7dd78c0-217d-4c7c-8583-5bfe8494ff1e.png)
+
+- node: manages and runs pods, it’s the machine (whether virtualized or physical) that performs the given work. 
+- pods: A Kubernetes pod is a group of container (smallest unit that Kubernetes administers) (have single IP address that is applied to every container within the pod)
+- cluster: of the components put together as a single unit.
+- control plane: main entry point for administrators and users to manage the various nodes. 
+
+Both the control plane and individual worker nodes have three main components each.
 
 **setup Kubertnetes (EKS) on aws**
 - refer tor README2.md
