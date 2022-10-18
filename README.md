@@ -242,6 +242,12 @@ Many DevOps tools participate in the workflow of CI/CD pipelines. Kubernetes is 
 
 Both the control plane and individual worker nodes have three main components each.
 
+###### Deployments in Kubernetes
+
+![image](https://user-images.githubusercontent.com/104793540/196551269-481b896d-745c-4ee2-acab-a585e43b0320.png)
+![image](https://user-images.githubusercontent.com/104793540/196551136-50684f5c-7cee-495f-b6c4-dbeb6eb23dfd.png)
+![image](https://user-images.githubusercontent.com/104793540/196551196-dc2866f9-9b69-40d2-83eb-84e670a3a16a.png)
+
 **setup Kubertnetes (EKS) on aws**
 - refer tor README2.md
 
