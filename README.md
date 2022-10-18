@@ -241,8 +241,13 @@ eksctl create cluster --name ayanle-cluster \
 --region us-east-1 \
 --node-type t2.small \
 ```
+- `kubectl run webapp --image=httpd`  (for commands refer to https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
-- write pod, service, and deployment manifest files
-- integrate Kubernetes with Ansible 
-- Ansible playbooks to create deployment and service 
-- CI/CD job to build code on ansible and deploy it on Kubernetes 
+
+write pod, service, and deployment manifest files
+
+integrate Kubernetes with Ansible 
+
+Ansible playbooks to create deployment and service 
+
+CI/CD job to build code on ansible and deploy it on Kubernetes 
