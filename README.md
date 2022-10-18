@@ -266,8 +266,9 @@ eksctl create cluster --name ayanle-cluster \
 - `kubectl run webapp --image=httpd`  (for commands refer to https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - `kubectl get nodes`  `kubectl get all`   `kubectl get pod`  `eksctl delete cluster ayanle --region us-east-1`
 - `kubectl create deployment  demo-nginx --image=nginx --replicas=2 --port=80`
+- `kubectl get replicaset`
 - `kubectl expose deployment demo-nginx --port=80 --type=LoadBalancer`  `kubectl get services -o wide`
-
+-  `kubectl delete deployment demo-nginx`  `kubectl delete service/demo-nginx`fo LB
 
 write pod, service, and deployment manifest files
 
