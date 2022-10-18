@@ -252,6 +252,11 @@ eksctl create cluster --name ayanle-cluster \
 --region us-east-1 \
 --node-type t2.small \
 ```
+
+![image](https://user-images.githubusercontent.com/104793540/196545357-b59edb09-1c32-4e1c-a5bf-b01a9c9b0bf4.png)
+![image](https://user-images.githubusercontent.com/104793540/196545403-b5e44dea-ba0a-4256-bf10-9a084fafcae4.png)
+![image](https://user-images.githubusercontent.com/104793540/196545984-a5107664-09eb-476e-a6e0-dd1bfd50a108.png)
+
 - `kubectl run webapp --image=httpd`  (for commands refer to https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - `kubectl get nodes`  `kubectl get all`   `kubectl get pod`  `eksctl delete cluster ayanle --region us-east-1`
 - `kubectl create deployment  demo-nginx --image=nginx --replicas=2 --port=80`
