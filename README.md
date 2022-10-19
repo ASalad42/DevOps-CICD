@@ -270,7 +270,52 @@ eksctl create cluster --name ayanle-cluster \
 - `kubectl expose deployment demo-nginx --port=80 --type=LoadBalancer`  `kubectl get services -o wide`
 -  `kubectl delete deployment demo-nginx`  `kubectl delete service/demo-nginx`fo LB
 
-write pod, service, and deployment manifest files
+write pod, service, and deployment manifest files:
+
+Pod
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod
+  labels:
+    app: demo-app
+spec:
+  containers:
+    - name: demon-nginx
+      image: nginx
+      ports:
+        - name: demo-nginx
+          containerPort: 80
+```
+
+- `kubectl apply -f pod.yml`
+
+Service:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-service
+
+spec:
+  ports:
+    - name: nginx-port
+      port: 80
+      targetPort: 80
+  selector: 
+    app: demo-app
+  type: LoadBalancer
+```
+
+- `kubectl apply -f service.yml`
+- `kubectl describe service/demo-service` 
+- `kubectl get pod -o wide` > check pod ip and node its running on 
+
+Deployment:
+```
+```
+
 
 integrate Kubernetes with Ansible 
 
