@@ -296,15 +296,17 @@ Service:
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-service
-
+  name: ayanle-service
+  labels:
+    app: regapp 
 spec:
+  selector:
+    app: regapp 
+
   ports:
-    - name: nginx-port
-      port: 80
-      targetPort: 80
-  selector: 
-    app: demo-app
+    - port: 8080
+      targetPort: 8080
+
   type: LoadBalancer
 ```
 
@@ -314,8 +316,48 @@ spec:
 
 Deployment:
 ```
+# deployment name and deployment lable 
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: ayanle-regapp
+  labels: 
+     app: regapp
+
+# create 2 pods from the pod template 
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: regapp
+
+# template to create a pod 
+  template:
+  # pod definition 
+    metadata:
+      labels:
+        app: regapp
+  # container definition 
+    spec:
+      containers:
+      - name: regapp
+        image: ayanle/regapp  # image name
+        imagePullPolicy: Always  # always pull latest image 
+        ports:
+        - containerPort: 8080  # port that container is listening on 
+  
+  # make sure only one pod update at a time 
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
 ```
 
+make highly avaiblable and scalable 
+
+- ``
+- ``
 
 integrate Kubernetes with Ansible 
 
