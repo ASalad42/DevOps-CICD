@@ -24,6 +24,7 @@ Deploy to:
 ##### setup jenkins 
 - launch ec2 with custom tcp rule for port 8080 from anywhere 
 - ssh into ec2 and `sudo su -` to be root user 
+- `vi /etc/hostname` (replace existing with desired) 
 - install java 
 - install jenkins from https://www.jenkins.io/download/ and download stable version LTS
 - Jenkins Redhat Packages 
@@ -218,12 +219,22 @@ create CI/CD job on jenkins to build and deploy container
 setup Ansible server
 - setup ec2 
 - setup hostname and create ansadmin user
-- add user to sudoers file 
-- generate ssh keys and enbale password based login 
-- install ansible 
+- `useradd ansadmin`  `passwd ansadmin`
+- add user to sudoers file > `visudo` (shift g for end of file)
 
+generate ssh keys and enbale password based login 
+- `vi /etc/ssh/sshd_config` (passowrd authentication YES)
+- `service sshd reload`
+- `sudo su - ansadmin`  `ssh-keygen`
 
-integrate Docker host with Ansible 
+install ansible 
+- become root user > `amazon-linux-extras install ansible2`
+
+integrate Docker host with Ansible
+- on docker host: create ansadmin, add ansadmin to sudoers file, enable password based login 
+- on ansible node: add docker ip to hosts file `vi /etc/ansible/hosts`, copy ssh keys (`ssh-keygen in .ssh dir`  & `ssh-copy-id 172.31.84.22`)
+- test the connection 
+
 
 Ansible playbook to create image 
 
