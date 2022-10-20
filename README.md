@@ -356,8 +356,13 @@ spec:
 
 make highly avaiblable and scalable 
 
-- ``
-- ``
+- `kubectl apply -f regapp-deploy.yml` and `kubectl apply -f regapp-service.yml`  
+- `kubectl get pod -o wide` > check pod ip and node its running on 
+- ``kubectl describe service/ayanle-service` `
+
+![image](https://user-images.githubusercontent.com/104793540/196946721-f03c62dc-6c50-444c-9d36-51940b1bebdb.png)
+![image](https://user-images.githubusercontent.com/104793540/196946641-de43e71e-7f6f-49aa-b26b-798129418d39.png)
+
 
 integrate Kubernetes with Ansible 
 
