@@ -214,12 +214,24 @@ create CI/CD job on jenkins to build and deploy container
 ![image](https://user-images.githubusercontent.com/104793540/194764817-58f9dcb2-154b-44b8-bffc-f61e0483bddf.png)
 
 #### CI/CD pipline with Github, Jenkins, Maven,Ansible and Docker
-- setup Ansible server
-- integrate Docker host with Ansible 
-- Ansible playbook to create image 
-- Ansible playbook to create container 
-- integrate Ansible with Jenkins 
-- CI/CD job to build code on ansible and deploy it on docker container 
+
+setup Ansible server
+- setup ec2 
+- setup hostname and create ansadmin user
+- add user to sudoers file 
+- generate ssh keys and enbale password based login 
+- install ansible 
+
+
+integrate Docker host with Ansible 
+
+Ansible playbook to create image 
+
+Ansible playbook to create container 
+
+integrate Ansible with Jenkins 
+
+CI/CD job to build code on ansible and deploy it on docker container 
 
 ### Deploy Artifacts on Kubernetes  
 
@@ -358,14 +370,16 @@ make highly avaiblable and scalable
 
 - `kubectl apply -f regapp-deploy.yml` and `kubectl apply -f regapp-service.yml`  
 - `kubectl get pod -o wide` > check pod ip and node its running on 
-- ``kubectl describe service/ayanle-service` `
+- `kubectl describe service/ayanle-service`
 
 ![image](https://user-images.githubusercontent.com/104793540/196946721-f03c62dc-6c50-444c-9d36-51940b1bebdb.png)
 ![image](https://user-images.githubusercontent.com/104793540/196946641-de43e71e-7f6f-49aa-b26b-798129418d39.png)
 
 
 integrate Kubernetes with Ansible 
-
+- on bootsrap server: create ansadmin, add ansadmin to sudoers files and enbale password based login 
 Ansible playbooks to create deployment and service 
+- on Ansible Node: add to hosts file, copy ssh keys, test the connection
+- start writing ansibe playbooks 
 
 CI/CD job to build code on ansible and deploy it on Kubernetes 
