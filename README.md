@@ -61,7 +61,7 @@ Deploy to:
 
 https://maven.apache.org/install 
 
-- setup Maven on Jenkins server
+##### setup Maven on Jenkins server
 
 https://maven.apache.org/install
 https://maven.apache.org/download.cgi
@@ -151,7 +151,7 @@ setting up docker environment (ensure sg for external port in docker is open)
 ##### How Docker Works
 ![image](https://user-images.githubusercontent.com/104793540/195129991-08da5e69-32fe-409f-b99a-850da445467e.png)
 
-tomcat container on dockerhub 
+##### tomcat container on dockerhub 
 
 ![image](https://user-images.githubusercontent.com/104793540/195131089-63c6a065-a9f1-4f81-8283-ba5ae9cc4dc5.png)
 
@@ -162,7 +162,7 @@ tomcat container on dockerhub
 - docker rm id 
 - login to container via `docker exec -it 67d8d46c82ba /bin/bash`
 
-write Dockerfile & create an image and container on docker host 
+##### write Dockerfile & create an image and container on docker host 
 
 https://docs.docker.com/engine/reference/builder/
 
@@ -198,14 +198,14 @@ to set environmental variables
 - `docker build -t dirofdockerfile`
 
 
-integrate docker host with jenkins 
+##### integrate docker host with jenkins 
 
 - create dockeradmin user `cat /etc/passwd`  `cat /etc/group`  `useradd dockeradmin`  `passwd dockeradmin`  `usermod -aG docker dockeradmin`
 - install SCP Publisher Plugin (host, use private ip)
 - add Dockerhost to jenkins "configure systems"
 
 
-create CI/CD job on jenkins to build and deploy container 
+##### create CI/CD job on jenkins to build and deploy container 
 - copy from buildanddeployjob
 - send artifacts over ssh/scp
 - home (webapp/target) - remote 
@@ -216,13 +216,13 @@ create CI/CD job on jenkins to build and deploy container
 
 #### CI/CD pipline with Github, Jenkins, Maven,Ansible and Docker
 
-setup Ansible server
+##### setup Ansible server
 - setup ec2 
-- setup hostname and create ansadmin user
+- setup hostname and create ansadmin user (and for dockerhost server)
 - `useradd ansadmin`  `passwd ansadmin`
 - add user to sudoers file > `visudo` (shift g for end of file)
 
-generate ssh keys and enbale password based login 
+generate ssh keys and enbale password based login (and for dockerhost server)
 - `vi /etc/ssh/sshd_config` (passowrd authentication YES)
 - `service sshd reload`
 - `sudo su - ansadmin`  `ssh-keygen`
@@ -230,19 +230,28 @@ generate ssh keys and enbale password based login
 install ansible 
 - become root user > `amazon-linux-extras install ansible2`
 
-integrate Docker host with Ansible
+##### integrate Docker host with Ansible
 - on docker host: create ansadmin, add ansadmin to sudoers file, enable password based login 
 - on ansible node: add docker ip to hosts file `vi /etc/ansible/hosts`, copy ssh keys (`ssh-keygen in .ssh dir`  & `ssh-copy-id 172.31.84.22`)
-- test the connection 
+- test the connection `ansible all -m ping`
 
+![image](https://user-images.githubusercontent.com/104793540/197040399-c6c7343f-4e11-4c97-9112-8cfdb8114f3d.png)
 
-Ansible playbook to create image 
+##### integrate Jenkins with Ansible
 
-Ansible playbook to create container 
+Build image and create container on Ansible 
 
-integrate Ansible with Jenkins 
+##### Ansible playbook to create image and container 
 
-CI/CD job to build code on ansible and deploy it on docker container 
+copy image onto DockerHub 
+
+##### Jenkins job to build an image onto ansible 
+
+Create container on dockerhost using ansible playbook
+
+continous deployment of docker container using ansible playbook 
+
+jenkins CI/CD to deploy on container using Ansible 
 
 ### Deploy Artifacts on Kubernetes  
 
@@ -387,7 +396,7 @@ make highly avaiblable and scalable
 ![image](https://user-images.githubusercontent.com/104793540/196946641-de43e71e-7f6f-49aa-b26b-798129418d39.png)
 
 
-integrate Kubernetes with Ansible 
+##### integrate Kubernetes with Ansible 
 - on bootsrap server: create ansadmin, add ansadmin to sudoers files and enbale password based login 
 Ansible playbooks to create deployment and service 
 - on Ansible Node: add to hosts file, copy ssh keys, test the connection
