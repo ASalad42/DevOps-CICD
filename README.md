@@ -8,7 +8,6 @@ Creating DevOps CI/CD pipelines using Git, Jenkins, Ansible, Docker and Kubernet
 
 ![image](https://user-images.githubusercontent.com/104793540/194337354-72e003b0-5d73-4621-b2d1-a701718dc6ed.png)
 
-
 ![image](https://user-images.githubusercontent.com/104793540/194765213-d5a59f45-aa4f-4d38-b22f-d50ed4ba0693.png)
 
 Deploy to:
