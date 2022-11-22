@@ -209,6 +209,24 @@ to set environmental variables
 - send artifacts over ssh/scp
 - home (webapp/target) - remote 
 
+##### Automate build and deployment on Docker container 
+
+- commit code on GitHub
+- build and create artifact 
+- copy artifact onto docker host (done before manually)
+- create docker image > create docker container 
+
+How:
+- send build artifacts over ssh to dockerhost
+- once artifact has been copied go inside opt and build docker image 
+- in jenkins job under configure: Exec command
+
+```
+cd /opt/docker;
+docker build -t regapp:v1 .;
+docker run -d --name regapp -p 8087:8080 regapp:v1
+```
+
 ### Deploy Artifacts on a Docker Container with help of Ansible 
 
 ![image](https://user-images.githubusercontent.com/104793540/194764817-58f9dcb2-154b-44b8-bffc-f61e0483bddf.png)
