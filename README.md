@@ -1,4 +1,4 @@
-# DevOps CICD Pipeline
+# DevOps CI/CD Pipeline
 
 ## Project 
 
